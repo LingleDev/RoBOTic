@@ -7,4 +7,10 @@ bot.on("ready", ready => {
   bot.user.setGame("j!help | Serving the owner.")
 })
 
+bot.on("message", message => {
+  if (message.content == pre + "help") {
+    message.channel.send("Only a help command. More later! :grin:")
+  }
+})
+
 bot.login(process.env.tok)
