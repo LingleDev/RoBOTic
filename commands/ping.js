@@ -1,5 +1,5 @@
 const discord = require('discord.js')
-const prefix = process.env.prefix
+const prefix = "j!"
 
 module.exports.run = (bot, message, args) => {
   if (message.content == prefix + "ping") {
