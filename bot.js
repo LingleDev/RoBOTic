@@ -8,7 +8,7 @@ bot.on("ready", ready => {
 })
 
 bot.on("message", message => {
-  if (message.content == pre + "help") {
+  if (message.content == prefix + "help") {
     message.channel.send("Only a help command. More later! :grin:")
   }
   if (message.content == prefix + "ping") {
