@@ -1,6 +1,6 @@
 const d = require('discord.js');
 const bot = new d.Client();
-const pre = process.env.prefix
+const prefix = process.env.prefix
 
 bot.on("ready", ready => {
   console.log("RoBOTic Version 0.0.1 Loaded!")
