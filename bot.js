@@ -12,7 +12,7 @@ bot.on("message", message => {
     message.channel.send("Only a help command. More later! :grin:")
   }
   if (message.content == prefix + "ping") {
-    message.channel.send("My ping is " + bot.ping + "ms."
+    message.channel.send("PONG! My ping is " + bot.ping + "ms."
   }
 })
 
