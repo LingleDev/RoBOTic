@@ -1,5 +1,6 @@
 const discord = require('discord.js')
-const prefix = "j!"
+const config = require('../config.json')
+const prefix = config.prefix
 
 module.exports.run = (bot, message, args) => {
   if (message.content == prefix + "ping") {
@@ -8,7 +9,7 @@ module.exports.run = (bot, message, args) => {
 }
 
 module.exports.help = {
-  name: "ping"
-  usage: "gets the ping of the bot."
+  name: "ping",
+  usage: "gets the ping of the bot.",
   informamtion: "ping"
 }
