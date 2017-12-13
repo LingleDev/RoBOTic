@@ -62,7 +62,7 @@ message.channel.send({embed}).then(m => m.delete(5000))
    message.channel.send({embed: {
   color: 3447003,
   description: "PONG! :ping_pong: My ping is " + bot.ping + "ms!"
-}});
+}}).then(m => m.delete(5000));
   }
 })
 
