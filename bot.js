@@ -2,13 +2,13 @@ const d = require('discord.js');
 const bot = new d.Client();
 const prefix = process.env.prefix
 
-bot.on("ready", ready => {
+bot.on("ready", () => {
   console.log("RoBOTic Version 0.0.1 Loaded!")
   bot.user.setGame(`RoBOTic Version 0.0.1 Loaded!`)
-  
-  bot.user.setGame(`j!help | ${bot.guilds.array().length} server(s)`)
-})
-
+  setInterval(() => {
+    bot.user.setGame(`j!help | ${bot.guilds.array().length} server(s)`)
+  }, 2500)
+ })
 
 bot.on("message", message => {
   if (message.content == prefix + "help") {
