@@ -17,6 +17,6 @@
     "querystring": "^0.2.0",
     "request": "^2.83.0",
     "snekfetch": "^3.5.3",
-    "fs": "^0.0.1"
+    "fs": "^0.0.1-security"
   }
 }
