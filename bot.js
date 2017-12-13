@@ -59,7 +59,10 @@ bot.on("message", message => {
 message.channel.send({embed})
   }
   if (message.content == prefix + "ping") {
-    message.channel.send(`:ping_pong: PONG! My ping is ${bot.ping} ms!`)
+   message.channel.send({embed: {
+  color: 3447003,
+  description: "PONG! :ping_pong: My ping is " + bot.ping + "ms!"
+}});
   }
 })
 
