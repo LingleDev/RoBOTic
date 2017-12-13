@@ -5,7 +5,7 @@ const prefix = process.env.prefix
 bot.on("ready", ready => {
   console.log("RoBOTic Version 0.0.1 Loaded!")
   bot.user.setGame(`RoBOTic Version 0.0.1 Loaded!`)
-  setTimeout(5000)
+  
   bot.user.setGame(`j!help | ${bot.guilds.array().length} server(s)`)
 })
 
