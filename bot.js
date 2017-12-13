@@ -15,16 +15,13 @@ require('fs').readdir("./commands/", (err, files) => {
 
 bot.on("ready", ready => {
   console.log("RoBOTic Version 0.0.1 Loaded!")
-  bot.user.setGame("j!help | Serving the owner.")
+  bot.user.setGame(`j!helping on ${bot.guilds.array().length} servers `)
 })
 
 
 bot.on("message", message => {
   if (message.content == prefix + "help") {
-    message.channel.send("Only a help command. More later! :grin:")
-  }
-  if (message.content == prefix + "ping") {
-    message.channel.send("PONG! :ping_pong: My ping is " + bot.ping + "ms.")
+    message.channel.send("Help and ping! :grin:")
   }
 })
 
