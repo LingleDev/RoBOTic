@@ -10,6 +10,16 @@ bot.on("ready", () => {
   }, 2500)
  })
 
+bot.commands = new d.Collection();
+
+require('fs').readdir("./commands/", (err, files) => {
+  console.log("Loading commands...")
+  if (err) return console.log(`Command loading failed!`);
+  files.filter(f => f.split(".").pop() === "js").forEach((f, i) => {
+    bot.commands.set(require(`./commands/${f}`).help.name, require(`./commands/${f}`));
+  })
+})
+
 bot.on("message", message => {
   if (message.content == prefix + "help") {
     const embed = {
@@ -59,12 +69,6 @@ bot.on("message", message => {
   ]
 };
 message.channel.send({embed}).then(m => m.delete(5000))
-  }
-  if (message.content == prefix + "ping") {
-   message.channel.send({embed: {
-  color: 3447003,
-  description: "PONG! :ping_pong: My ping is " + bot.ping + "ms!"
-}}).then(m => m.delete(5000));
   }
 })
 
