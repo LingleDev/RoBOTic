@@ -15,7 +15,7 @@ bot.on("message", message => {
   "description": "You asked for help, here it is! :stuck_out_tongue:",
   "url": "https://discord.gg/wxrWNWZ",
   "color": 508910,
-  "timestamp": "2017-12-13T17:51:29.259Z",
+  "timestamp": new Date(),
   "footer": {
     "icon_url": "https://cdn.discordapp.com/attachments/349661784057184256/390558851348561945/bot.png",
     "text": "footer text"
