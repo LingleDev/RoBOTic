@@ -18,7 +18,7 @@ bot.on("message", message => {
   "timestamp": new Date(),
   "footer": {
     "icon_url": "https://cdn.discordapp.com/attachments/349661784057184256/390558851348561945/bot.png",
-    "text": "footer text"
+    "text": "RoBOTic Help Menu"
   },
   "thumbnail": {
     "url": "https://cdn.discordapp.com/attachments/349661784057184256/390558851348561945/bot.png"
