@@ -2,14 +2,6 @@ const d = require('discord.js');
 const bot = new d.Client();
 const prefix = process.env.prefix
 
-bot.on("ready", () => {
-  console.log("RoBOTic Version 0.0.1 Loaded!")
-  bot.user.setGame(`RoBOTic Version 0.0.1 Loaded!`)
-  setInterval(() => {
-    bot.user.setGame(`j!help | ${bot.guilds.array().length} server(s)`)
-  }, 2500)
- })
-
 bot.commands = new d.Collection();
 
 require('fs').readdir("./commands/", (err, files) => {
@@ -19,6 +11,14 @@ require('fs').readdir("./commands/", (err, files) => {
     bot.commands.set(require(`./commands/${f}`).help.name, require(`./commands/${f}`));
   })
 })
+
+bot.on("ready", () => {
+  console.log("RoBOTic Version 0.0.1 Loaded!")
+  bot.user.setGame(`RoBOTic Version 0.0.1 Loaded!`)
+  setInterval(() => {
+    bot.user.setGame(`j!help | ${bot.guilds.array().length} server(s)`)
+  }, 2500)
+ })
 
 bot.on("message", message => {
   if (message.content == prefix + "help") {
