@@ -56,7 +56,7 @@ bot.on("message", message => {
     }
   ]
 };
-message.channel.send({embed})
+message.channel.send({embed}).then(m => m.delete(5000))
   }
   if (message.content == prefix + "ping") {
    message.channel.send({embed: {
