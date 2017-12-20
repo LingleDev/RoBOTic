@@ -67,6 +67,8 @@ message.channel.send({embed}).then(m => m.delete(15000))
      .setTitle("Ping")
      .setThumbnail("https://cdn.discordapp.com/attachments/349661784057184256/390558851348561945/bot.png")
      .setDescription(":ping_pong: PONG! My ping is " + bot.ping + "ms!")
+     
+     message.channel.send(embed)
   }
 })
 
