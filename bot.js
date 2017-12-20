@@ -4,14 +4,6 @@ const prefix = process.env.prefix
 
 bot.commands = new d.Collection();
 
-require('fs').readdir("./commands/", (err, files) => {
-  console.log("Loading commands...")
-  if (err) return console.log(`Command loading failed!`);
-  files.filter(f => f.split(".").pop() === "js").forEach((f, i) => {
-    bot.commands.set(require(`./commands/${f}`).help.name, require(`./commands/${f}`));
-  })
-})
-
 bot.on("ready", () => {
   console.log("RoBOTic Version 0.0.1 Loaded!")
   bot.user.setGame(`RoBOTic Version 0.0.1 Loaded!`)
@@ -68,7 +60,13 @@ bot.on("message", message => {
     }
   ]
 };
-message.channel.send({embed}).then(m => m.delete(5000))
+message.channel.send({embed}).then(m => m.delete(15000))
+  }
+  if (message.content == prefix + "ping") {
+     const embed = new d.RichEmbed()
+     .setTitle("Ping)
+     .setThumbnail("https://cdn.discordapp.com/attachments/349661784057184256/390558851348561945/bot.png")
+     .setDescription(":ping_pong: PONG! My ping is " + bot.ping + "ms!")
   }
 })
 
