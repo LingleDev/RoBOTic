@@ -12,6 +12,18 @@ bot.on("ready", () => {
  })
 
 bot.on("message", message => {
+  let args = message.content.split(' ').slice(0)
+  
+  bot.commands = new d.Collection();
+
+require('fs').readdir("./commands/", (err, files) => {
+  console.log("Loading commands...");
+  if (err) return console.log(`Command loading failed!`);
+  files.filter(f => f.split(".").pop() === "js").forEach((f, i) => {
+    bot.commands.set(require(`./commands/${f}`).help.name, require(`./commands/${f}`)(bot, message, args));
+  });
+});
+
   if (message.content == prefix + "help") {
     const embed = {
   "title": "RoBOTic Help",
