@@ -1,6 +1,6 @@
 const discord = require('discord.js');
 const bot = new discord.Client();
-const prefix = process.env.prefix
+const prefix = "j!"
 
 bot.commands = new discord.Collection();
 
@@ -23,6 +23,7 @@ bot.on("ready", () => {
 
 bot.on("message", message => {
   if (message.channel.type == "dm") return;
+  if (!message.content.startsWith(prefix)) return;
   let mArray = message.content.split(" ")
   let args = mArray.slice(1)
   let cmd = bot.commands.get(mArray.slice(prefix.length))
