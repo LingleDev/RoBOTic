@@ -32,7 +32,7 @@ bot.on("message", message => {
   
   if (cmd) {
     cmd.run(bot, message, args, discord)
-    console.log(`${message.author.username} used the ${message.content.split(" ")[0]} command.`)
+    console.log(`${message.author.username} used the ${mArray[0].slice(prefix.length)} command.`)
   }
 });
 
